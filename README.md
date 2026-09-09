@@ -1,6 +1,8 @@
 # Linux Server Administration
 
-A hands-on Linux server administration project demonstrating core system administration, security, networking, web server configuration, monitoring, logging, and Bash automation skills.
+I provisioned and administered an Ubuntu Linux server, implemented SSH-based remote administration, configured firewall rules, deployed an Nginx web server, managed system services, analyzed system logs, configured file permissions, and automated server health checks and backups using Bash and cron.
+
+I configured the server for remote administration using SSH, secured using UFW firewall rules, and configured it to host a web application using Nginx. Also, I included a Bash automation for server health monitoring and server configuration backups using cron.
 
 The project was built on **Ubuntu Server** and documented as a practical DevOps foundation project.
 
