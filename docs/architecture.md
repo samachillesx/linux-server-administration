@@ -1,9 +1,8 @@
-## Architecture 
+# Architecture 
 
+The project consists of a single Ubuntu Linux server used for administration and web hosting.
 
-
-
-# Server Information
+## Server Information
 
 After configuring your server, run:
 
@@ -16,5 +15,25 @@ free -h
 df -h
 ip addr
 
-<img width="1680" height="793" alt="server-info1" src="https://github.com/user-attachments/assets/d906bd94-78ac-4f81-b670-507ba3af5762" />
+## Architecture Diagram
 
+```text
+                    Administrator
+                         |
+                         | SSH
+                         v
+                 +---------------+
+                 | Ubuntu Server |
+                 |               |
+                 |   UFW         |
+                 |    |          |
+                 |  SSH :22      |
+                 |  HTTP :80     |
+                 |    |          |
+                 |   Nginx       |
+                 |    |          |
+                 +----|----------+
+                      |
+                      v
+                 Web Application
+                 /var/www/devops-demo
