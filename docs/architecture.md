@@ -1,15 +1,20 @@
 ## Architecture 
 
-```text 
-
-Developer Machine | | SSH | Port 22 v +-----------------------+ | Ubuntu Server | | | | UFW Firewall | | / \ | | SSH HTTP | | 22 80 | | \ / | | \ / | | Nginx | | | | | Web Content | | | | Bash Automation | | ├── Health Check | | └── Backup | | | | systemd | | Services | +-----------------------+ | v Web Browser
 
 
 
-### Server Information
+# Server Information
+
+After configuring your server, run:
 
 ```bash
 hostname
+cat /etc/os-release
 uname -a
-df -h
+lscpu
 free -h
+df -h
+ip addr
+
+<img width="1680" height="793" alt="server-info1" src="https://github.com/user-attachments/assets/d906bd94-78ac-4f81-b670-507ba3af5762" />
+
