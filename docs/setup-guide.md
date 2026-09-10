@@ -120,7 +120,30 @@ Verify group membership:
 groups devops
 ```
 
-> Replace `devops` with the actual username used in the project.
+I created another user representing an application/service user:
+
+```bash
+sudo adduser appuser
+```
+
+Verify:
+
+```bash
+id devops
+id appuser
+```
+
+Users are responsible for:
+
+```bash
+devops
+   ↓
+Server administration
+
+appuser
+   ↓
+Application ownership/management
+```
 
 ---
 
