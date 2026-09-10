@@ -42,7 +42,7 @@ The project uses Linux command-line tools for server administration and configur
 Connect to the Linux server using SSH.
 
 ```bash
-ssh username@SERVER_IP
+ssh devops@10.x.x.x
 ```
 
 Verify that the connection was successful:
