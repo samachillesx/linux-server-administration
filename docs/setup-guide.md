@@ -207,7 +207,7 @@ sudo systemctl enable ssh
 From the client machine:
 
 ```bash
-ssh username@SERVER_IP
+ssh devops@10.x.x.x
 ```
 
 After connecting, verify the remote system:
