@@ -16,7 +16,7 @@ The setup covers:
 * Backup configuration
 * Server verification
 
-> **Note:** Commands and configuration should be adapted to the specific Linux distribution and environment being used.
+> **Note:** Commands and configuration should be adapted to the specific Linux distribution and environment being used. Mine is Ubuntu/Debian.
 
 ---
 
@@ -92,6 +92,12 @@ Check system uptime:
 
 ```bash
 uptime
+```
+
+Or you could verify with combined commands:
+
+```bash
+hostname && uname -a && lscpu && free -h && df -h && ip addr
 ```
 
 These commands provide basic information about the server environment.
