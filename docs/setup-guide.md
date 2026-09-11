@@ -265,6 +265,12 @@ Allow HTTP:
 sudo ufw allow 80/tcp
 ```
 
+Check:
+
+```bash
+sudo ufw status numbered
+```
+
 ---
 
 # 7. Install Nginx
