@@ -223,7 +223,7 @@ Successful execution confirms that remote administration is working.
 
 # 6. Firewall Configuration
 
-## 6.1 Install UFW
+## 6.1 Install UFW(Uncomplicated Firewall)
 
 Install UFW if it is not already available:
 
@@ -235,6 +235,18 @@ Check its current status:
 
 ```bash
 sudo ufw status
+```
+
+Enable UFW:
+
+```bash
+sudo ufw enable
+```
+
+Verify the firewall rules:
+
+```bash
+sudo ufw status verbose
 ```
 
 ---
@@ -252,26 +264,6 @@ Allow HTTP:
 ```bash
 sudo ufw allow 80/tcp
 ```
-
-> If your environment uses different ports, document the actual ports used.
-
----
-
-## 6.3 Enable the Firewall
-
-Enable UFW:
-
-```bash
-sudo ufw enable
-```
-
-Verify the firewall rules:
-
-```bash
-sudo ufw status verbose
-```
-
-The resulting configuration should allow only the services required by the project.
 
 ---
 
