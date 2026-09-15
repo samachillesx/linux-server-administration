@@ -480,7 +480,15 @@ Run the script:
 The output can be captured as evidence in:
 
 ```text
-[screenshots/health-check.png](https://github.com/samachillesx/linux-server-administration/blob/main/screenshots/server_health.png)
+[screenshots/server_health.png]
+
+(https://github.com/samachillesx/linux-server-administration/blob/main/screenshots/server_health.png)
+```
+
+```image
+[screenshots/server_health.png]
+
+(https://github.com/samachillesx/linux-server-administration/blob/main/screenshots/server_health.png)
 ```
 
 ---
