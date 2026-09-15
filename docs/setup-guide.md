@@ -332,14 +332,22 @@ A successful response confirms that Nginx is serving HTTP requests.
 Create a directory for the project website:
 
 ```bash
-sudo mkdir -p /var/www/devops-demo
+sudo mkdir -p /var/www/web-content
 ```
 
-Assign appropriate ownership:
+Assign ownership:
 
 ```bash
-sudo chown -R $USER:$USER /var/www/devops-demo
+sudo chown -R $USER:$USER /var/www/web-content
 ```
+
+Create a custom web page:
+
+```bash
+sudo vim /var/www/index.html
+```
+
+
 
 ---
 
