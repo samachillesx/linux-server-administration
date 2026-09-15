@@ -452,7 +452,7 @@ The configured web page should be displayed.
 Create the script:
 
 ```bash
-nano scripts/server_health.sh
+vim scripts/server_health.sh
 ```
 
 The script is designed to collect basic server information such as:
@@ -480,7 +480,7 @@ Run the script:
 The output can be captured as evidence in:
 
 ```text
-screenshots/health-check.png
+[screenshots/health-check.png](https://github.com/samachillesx/linux-server-administration/blob/main/screenshots/server_health.png)
 ```
 
 ---
