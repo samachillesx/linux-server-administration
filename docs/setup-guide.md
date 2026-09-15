@@ -479,6 +479,8 @@ Run the script:
 
 ![Server Health](../screenshots/server_health.png)
 
+![Server Health](../screenshots/server_health1.png)
+
 ---
 
 # 12. Create the Backup Script
