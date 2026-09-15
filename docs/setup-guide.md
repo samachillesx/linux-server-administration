@@ -341,14 +341,6 @@ Assign ownership:
 sudo chown -R $USER:$USER /var/www/web-content
 ```
 
-Create a custom web page:
-
-```bash
-sudo vim /var/www/index.html
-```
-
-
-
 ---
 
 ## 8.2 Create the Web Page
@@ -356,7 +348,7 @@ sudo vim /var/www/index.html
 Create the HTML file:
 
 ```bash
-nano /var/www/devops-demo/index.html
+vim /var/www/web-content/index.html
 ```
 
 Add the project web content.
@@ -370,8 +362,9 @@ Example:
     <title>Linux Server Administration</title>
 </head>
 <body>
-    <h1>Linux Server Administration Project</h1>
-    <p>Nginx is running successfully.</p>
+    <h1>Linux Server is Running</h1>
+    <p>Server administered by Sam Achilles.</p>
+    <p>Ubuntu + Nginx</p>
 </body>
 </html>
 ```
@@ -380,12 +373,12 @@ Save the file and exit.
 
 ---
 
-# 9. Configure Nginx
+# 9. Configure Nginx (Server Block)
 
 Create the Nginx server configuration:
 
 ```bash
-sudo nano /etc/nginx/sites-available/devops-demo
+sudo vim /etc/nginx/sites-available/server-block
 ```
 
 Example configuration:
@@ -395,7 +388,7 @@ server {
     listen 80;
     server_name _;
 
-    root /var/www/devops-demo;
+    root /var/www/web-content;
     index index.html;
 
     location / {
@@ -407,8 +400,7 @@ server {
 Create the symbolic link:
 
 ```bash
-sudo ln -s /etc/nginx/sites-available/devops-demo \
-/etc/nginx/sites-enabled/devops-demo
+sudo ln -s /etc/nginx/sites-available/server-block /etc/nginx/sites-enabled/server-block
 ```
 
 Test the Nginx configuration:
@@ -421,6 +413,12 @@ Reload Nginx:
 
 ```bash
 sudo systemctl reload nginx
+```
+
+Start Nginx Again:
+
+```bash
+sudo systemctl start nginx
 ```
 
 ---
