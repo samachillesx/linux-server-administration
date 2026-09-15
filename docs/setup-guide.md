@@ -477,7 +477,7 @@ Run the script:
 ./scripts/server_health.sh
 ```
 
-![Alt text](screenshots/server_health.png)
+![Server Health](../screenshots/server_health.png)
 
 ---
 
