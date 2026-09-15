@@ -403,6 +403,12 @@ Create the symbolic link:
 sudo ln -s /etc/nginx/sites-available/server-block /etc/nginx/sites-enabled/server-block
 ```
 
+Remove the default Nginx page:
+
+```bash
+sudo rm /etc/nginx/sites-enabled/default
+```
+
 Test the Nginx configuration:
 
 ```bash
