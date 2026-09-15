@@ -477,19 +477,7 @@ Run the script:
 ./scripts/server_health.sh
 ```
 
-The output can be captured as evidence in:
-
-```text
-[screenshots/server_health.png]
-
-(https://github.com/samachillesx/linux-server-administration/blob/main/screenshots/server_health.png)
-```
-
-```image
-[screenshots/server_health.png]
-
-(https://github.com/samachillesx/linux-server-administration/blob/main/screenshots/server_health.png)
-```
+![Alt text](screenshots/server_health.png)
 
 ---
 
@@ -498,7 +486,7 @@ The output can be captured as evidence in:
 Create the backup script:
 
 ```bash
-nano scripts/backup.sh
+vim scripts/backup.sh
 ```
 
 The script is designed to create a compressed backup of the selected files or directories.
