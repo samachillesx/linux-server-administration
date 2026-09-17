@@ -289,6 +289,8 @@ Check its status:
 sudo systemctl status nginx
 ```
 
+![Server Health](../screenshots/nginx.png)
+
 ---
 
 ## 7.2 Enable Nginx
@@ -483,7 +485,7 @@ Run the script:
 
 ---
 
-# 12. Create the Backup Script
+# 12. Create the Backup Script (Nginx Config Files)
 
 Create the backup script:
 
