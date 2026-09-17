@@ -487,13 +487,19 @@ Run the script:
 
 # 12. Create the Backup Script (Nginx Config Files)
 
+Create the backup directory:
+
+```bash
+sudo mkdir -p /backups
+```
+
 Create the backup script:
 
 ```bash
 vim scripts/backup.sh
 ```
 
-The script is designed to create a compressed backup of the selected files or directories.
+The script creates a compressed backup of Nginx Configuration files.
 
 Make it executable:
 
@@ -514,6 +520,8 @@ ls -lh
 ```
 
 A timestamped backup archive should be visible in the configured backup location.
+
+![Server Health](../screenshots/backup.png)
 
 ---
 
