@@ -289,8 +289,6 @@ Check its status:
 sudo systemctl status nginx
 ```
 
-![Nginx](../screenshots/nginx.png)
-
 ---
 
 ## 7.2 Enable Nginx
@@ -306,6 +304,10 @@ If necessary, start it:
 ```bash
 sudo systemctl start nginx
 ```
+
+Nginx was installed and configured as the web server. The service was enabled to start automatically at boot, and its configuration was validated before deployment.
+
+![Nginx](../screenshots/nginx.png)
 
 ---
 
