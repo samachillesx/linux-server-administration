@@ -22,7 +22,7 @@ The setup covers:
 
 ## 2. Prerequisites
 
-Before beginning the setup, the following were required:
+Before beginning the setup, the following are required:
 
 * A Linux server
 * SSH access to the server
@@ -289,7 +289,7 @@ Check its status:
 sudo systemctl status nginx
 ```
 
-![Server Health](../screenshots/nginx.png)
+![Nginx](../screenshots/nginx.png)
 
 ---
 
@@ -324,6 +324,8 @@ curl http://localhost
 ```
 
 A successful response confirms that Nginx is serving HTTP requests.
+
+![Nginx Web](../screenshots/nginx-web.png)
 
 ---
 
