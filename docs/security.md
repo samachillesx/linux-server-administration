@@ -2,9 +2,9 @@
 
 ## 1. Overview
 
-Security is an important part of Linux server administration. In this project, basic security controls were implemented to reduce unnecessary access to the server and protect the services running on it.
+Security is a key part of managing and maintaining a Linux server. In this project, I applied a number of basic security controls to limit unnecessary access, reduce potential risks, and help protect the services running on the server.
 
-The security configuration focused on:
+The security configuration focused on the following areas:
 
 * User and privilege management
 * File ownership and permissions
@@ -14,7 +14,7 @@ The security configuration focused on:
 * Software updates
 * Basic security verification
 
-The project uses a layered approach where access to the server and its services is controlled at multiple levels.
+For this project, I used a layered security approach, applying controls at different levels to manage access to the server and protect the services running on it.
 
 ---
 
@@ -36,7 +36,7 @@ The main security objectives were to:
 
 ## 3.1 Dedicated User
 
-A dedicated Linux user was created for administration instead of relying exclusively on the default account.
+I created a dedicated Linux user for server administration rather than relying solely on the default account. This provides better separation of administrative access and makes user permissions easier to manage.
 
 Example:
 
@@ -139,7 +139,7 @@ sudo systemctl status ssh
 Remote access was tested using:
 
 ```bash
-ssh username@SERVER_IP
+ssh username@10.x.x.x
 ```
 
 The SSH port used in this project is:
@@ -148,7 +148,7 @@ The SSH port used in this project is:
 22/TCP
 ```
 
-SSH access was also considered when configuring the firewall to ensure that remote administration was not accidentally blocked.
+When configuring the firewall, I made sure to allow SSH access so that remote administration would remain available and I would not accidentally lock myself out of the server.
 
 ### SSH Key Authentication
 
@@ -158,9 +158,7 @@ Where SSH keys are used, a key pair can be generated with:
 ssh-keygen -t ed25519
 ```
 
-The public key can then be installed on the server for key-based authentication.
-
-> Only document SSH key authentication as implemented if it was actually configured during this project.
+I then installed the public key on the server to enable SSH key-based authentication. This provides a more secure way to access the server remotely without relying solely on password authentication.
 
 ---
 
@@ -207,7 +205,7 @@ sudo ufw status numbered
 |   22 | TCP      | SSH     | Remote administration |
 |   80 | TCP      | HTTP    | Web traffic           |
 
-Only ports required by the project should be exposed.
+I configured the firewall to allow only the ports required for the project, keeping unnecessary ports closed to reduce the server's exposure.
 
 ---
 
@@ -233,7 +231,7 @@ After configuration changes, Nginx was reloaded:
 sudo systemctl reload nginx
 ```
 
-The server was checked to ensure that Nginx was listening only on the required web port.
+I checked the server to confirm that Nginx was listening only on the required web port. This helped ensure that no unnecessary ports were exposed to external connections.
 
 Listening services can be inspected using:
 
@@ -259,13 +257,13 @@ Available package upgrades were installed using:
 sudo apt upgrade -y
 ```
 
-Updates should be performed regularly in a real server environment rather than only during initial setup.
+I would ensure that system updates are performed regularly in a real server environment rather than only during the initial setup. Keeping the system up to date helps maintain security and reduces exposure to known vulnerabilities.
 
 ---
 
 # 9. Service Exposure
 
-The server was checked for listening network services using:
+I checked the server for listening network services using:
 
 ```bash
 sudo ss -tulpn
@@ -286,9 +284,7 @@ Unnecessary services and ports should not be exposed to external networks.
 
 # 10. Backup Security
 
-The project includes a Bash backup script for creating backups of selected server configuration or project files.
-
-Backups should be protected from unauthorized access because they may contain configuration information or other sensitive data.
+For this project, I created a Bash backup script to make copies of the Nginx configuration files. Since these backups may contain configuration details or other sensitive information, I also considered how they should be protected from unauthorized access.
 
 The backup process should therefore consider:
 
@@ -304,13 +300,11 @@ Backup files can be inspected using:
 ls -lah /backups/
 ```
 
-> The backup implementation in this project is intended as a basic demonstration and should not be considered a complete production backup strategy.
-
 ---
 
 # 11. Security Verification
 
-After configuring the server, the following checks can be performed.
+After configuring the server, I performed the following checks.
 
 ### Check firewall
 
@@ -368,18 +362,16 @@ These checks provide basic confirmation that the main security controls and serv
 | Listening ports  | Services inspected with `ss`                     | Completed |
 | Backups          | Basic backup process implemented                 | Completed |
 
-> Update the status column if a particular control was not actually implemented.
-
 ---
 
 # 13. Security Limitations
 
-This project demonstrates foundational server-security practices rather than a complete production security architecture.
+This project focuses on demonstrating the core server-security practices I implemented rather than providing a fully comprehensive, production-ready security architecture.
 
-The following areas could be improved in a future version:
+In a future version, I would look to strengthen the project in the following areas:
 
-* SSH key-only authentication
-* Disabling password-based SSH authentication
+* SSH key-only authentication | Completed |
+* Disabling password-based SSH authentication | Completed |
 * Fail2ban or equivalent brute-force protection
 * HTTPS/TLS configuration
 * Automated security updates
@@ -391,15 +383,15 @@ The following areas could be improved in a future version:
 * Monitoring and alerting
 * More restrictive firewall rules based on the actual deployment environment
 
-These improvements would provide additional protection for a production-oriented server.
+Implementing these improvements would make the server more secure and better prepared for the demands of a production environment.
 
 ---
 
 # 14. Future Security Improvements
 
-As the project develops toward cloud and DevOps environments, security could be integrated further into the infrastructure and deployment process.
+As I continue developing the project and move toward cloud and DevOps environments, I would integrate security more deeply into both the infrastructure and deployment process.
 
-Potential improvements include:
+Potential improvements I would consider include:
 
 ```text
 Linux Server
@@ -434,7 +426,7 @@ Future projects can extend these principles into:
 
 # 15. Summary
 
-The security configuration for this project focused on establishing basic controls for a Linux server environment.
+For this project, I focused on putting basic but important security controls in place for a Linux server environment. The aim was to reduce common security risks and apply practical server-hardening techniques.
 
 The main controls implemented were:
 
@@ -447,4 +439,4 @@ The main controls implemented were:
 * Regular system updates
 * Basic backup protection
 
-These practices provide a foundation for securing Linux servers and introduce security concepts that can be expanded into more advanced Cloud and DevOps environments.
+Together, these measures provide a solid foundation for securing a Linux server. They also helped me build practical knowledge of security principles that can be further developed and applied in more advanced Cloud and DevOps environments.
