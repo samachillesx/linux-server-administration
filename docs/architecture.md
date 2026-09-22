@@ -2,11 +2,11 @@
 
 ## 1. Overview
 
-This project demonstrates the setup and administration of a Linux server environment for basic web hosting, system administration, security, and automation.
+In this project, I set up and administered a Linux server environment focused on basic web hosting, system administration, security, and automation.
 
-The environment consists of a Linux server running Nginx as a web server, UFW as the host-based firewall, SSH for remote administration, and Bash scripts for basic server health monitoring and backups.
+The environment consists of a Linux server running Nginx as the web server, UFW for host-based firewall protection, SSH for secure remote administration, and Bash scripts for basic server health monitoring and backup tasks.
 
-The project is designed to demonstrate foundational Linux and DevOps concepts that can be applied to cloud-based server environments.
+Through this project, I gained practical experience with foundational Linux and DevOps concepts and explored how these skills can be applied and expanded when working with cloud-based server environments.
 
 ---
 
@@ -68,8 +68,6 @@ It is responsible for:
 * Providing remote administration through SSH
 * Running administrative Bash scripts
 * Managing files, processes, packages, and networking
-
-Linux command-line tools are used throughout the project to administer and troubleshoot the server.
 
 ---
 
@@ -150,7 +148,7 @@ scripts/
 
 The health-check script provides basic information about the server and its current state.
 
-Depending on the implementation, this can include:
+This includes:
 
 * Hostname
 * System uptime
@@ -269,7 +267,8 @@ linux-server-administration/
     ├── ssh.png
     ├── firewall.png
     ├── nginx.png
-    └── health-check.png
+    ├── backup.png
+    └── server-health.png
 ```
 
 This structure keeps the main README concise while providing separate documentation for configuration, security, troubleshooting, and project evidence.
@@ -295,9 +294,7 @@ Key considerations include:
 
 If this project were extended toward a more production-oriented environment, possible improvements would include:
 
-* SSH key-based authentication
 * HTTPS/TLS with a valid SSL certificate
-* Automated backup scheduling
 * Centralized logging
 * Server monitoring and alerting
 * Automated deployment
