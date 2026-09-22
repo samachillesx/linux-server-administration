@@ -260,7 +260,7 @@ linux-server-administration/
 │   └── backup.sh
 │
 ├── nginx/
-│   └── devops-demo.conf
+│   └── server-block.conf
 │
 └── screenshots/
     ├── server-info.png
