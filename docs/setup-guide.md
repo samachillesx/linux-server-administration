@@ -31,8 +31,6 @@ Before beginning the setup, the following are required:
 * A local SSH client
 * Basic Linux command-line knowledge
 
-The project uses Linux command-line tools for server administration and configuration.
-
 ---
 
 # 3. Initial Server Setup
