@@ -2,9 +2,9 @@
 
 ## Overview
 
-This project provided hands-on experience with Linux server administration and introduced several concepts that are important for Cloud and DevOps engineering.
+This project gave me practical, hands-on experience with Linux server administration and helped me develop an understanding of several concepts that are important in Cloud and DevOps engineering.
 
-Rather than only following commands, I learned how different parts of a Linux server work together and how to troubleshoot problems when the expected result does not occur.
+Instead of simply following commands, I learned how the different components of a Linux server work together and how to investigate and troubleshoot issues when things do not work as expected. This helped me build a more practical understanding of server management and problem-solving.
 
 ---
 
