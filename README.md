@@ -1,12 +1,24 @@
 # Linux Server Administration
 
-I provisioned and administered an Ubuntu Linux server, implemented SSH-based remote administration, configured firewall rules, deployed an Nginx web server, managed system services, analyzed system logs, configured file permissions, and automated server health checks and backups using Bash and cron.
+I provisioned and administered an **Ubuntu Linux server** running as a VirtualBox virtual machine, implementing SSH-based remote administration, user and file permission management, UFW firewall rules, Nginx web server configuration, and system service management.
 
-I configured the server for remote administration using SSH, secured using UFW firewall rules, and configured it to host a web application using Nginx. Also, I included a Bash automation for server health monitoring and server configuration backups using cron.
+I also automated server health checks and configuration backups using **Bash**, while documenting the configuration, troubleshooting, verification steps, and project evidence throughout the process.
 
-The project was built on **Ubuntu Server** and documented as a practical DevOps foundation project.
+The project was built as a practical **Linux and DevOps foundation project**, providing hands-on experience with core server administration concepts that extend into cloud infrastructure, automation, and CI/CD.
 
-## 🎯 Project Objectives
+## 🎯 Project Overview
+
+For this project, I provisioned an **Ubuntu Server virtual machine using VirtualBox** and configured the environment from the command line.
+
+Two additional users were created for specific purposes:
+
+| User          | Purpose                               |
+| ------------- | ------------------------------------- |
+| `samachilles` | Primary server administration         |
+| `devops`      | SSH access verification               |
+| `appuser`     | Application ownership and permissions |
+
+The actual server administration and configuration work was carried out under `samachilles`.
 
 * Administer a Linux server from the command line
 * Manage users, groups, packages, permissions, and services
@@ -20,16 +32,17 @@ The project was built on **Ubuntu Server** and documented as a practical DevOps 
 
 ## 🛠️ Technologies & Tools
 
-| Category        | Tools                  |
-| --------------- | ---------------------- |
-| OS              | Ubuntu Server          |
-| Web Server      | Nginx                  |
-| Security        | UFW, SSH               |
-| Automation      | Bash, Cron             |
-| Services        | systemd                |
-| Networking      | TCP/IP, DNS, SSH, HTTP |
-| Monitoring      | htop, ps, free, df, ss |
-| Version Control | Git                    |
+| Category        | Tools                  | Purpose
+| --------------- | ---------------------- | ----------------------                          |
+| OS              | Ubuntu Server          | 	Linux server environment                       |
+| Virtualization  | VirtualBox             | Virtual machine platform                        |
+| Web Server      | Nginx                  | Web server and HTTP services                    |
+| Security        | UFW, OpenSSH           | Firewall configuration and secure remote access |
+| Automation      | Bash, Cron             | Server scripting and scheduled tasks            |
+| Services        | systemd                | 	Service and process management                 |
+| Networking      | TCP/IP, DNS, SSH, HTTP | 	Network communication and connectivity         |
+| Monitoring      | htop, ps, free, df, ss | 	System and network monitoring                  |
+| Version Control | Git / GitHub           | Version control and project documentation       |
 
 ## 🏗️ Project Structure
 
@@ -50,18 +63,15 @@ linux-server-administration/
 │   └── backup.sh
 │
 ├── nginx/
-│   └── devops-demo.conf
+│   └── server-block.conf
 │
 ├── screenshots/
 │   ├── 01-server-info.png
 │   ├── 02-ssh.png
-│   ├── 03-users-permissions.png
 │   ├── 04-firewall.png
 │   ├── 05-nginx.png
-│   ├── 06-services.png
-│   ├── 07-networking.png
-│   ├── 08-logs.png
-│   ├── 09-health-check.png
+│   ├── 08-nginx-web.png
+│   ├── 09-server-health.png
 │   └── 10-backup.png
 │
 └── .gitignore
