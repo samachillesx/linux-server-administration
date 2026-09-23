@@ -129,7 +129,9 @@ Or you could verify with combined commands:
 hostname && uname -a && lscpu && free -h && df -h && ip addr
 ```
 
-These commands provided a basic overview of the server environment.
+![Server Info](../screenshots/server-info.png)
+
+These commands provide a basic overview of the server environment.
 
 ---
 
@@ -685,7 +687,7 @@ Relevant evidence includes:
 * `ssh.png` — Successful SSH connection using `devops`
 * `firewall.png` — UFW configuration
 * `nginx.png` — Nginx service and web server
-* `health-check.png` — Server health-check script
+* `server-health.png` — Server health-check script
 * `backup.png` — Backup script execution
 
 These screenshots provide visual evidence of the configuration and verification steps carried out during the project.
