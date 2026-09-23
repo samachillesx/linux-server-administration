@@ -43,8 +43,6 @@ For this project, I used:
 * A user account with `sudo` privileges
 * Basic Linux command-line knowledge
 
-The server configuration and administration were performed primarily through the Linux command line.
-
 ---
 
 # 3. Initial Server Setup
@@ -123,6 +121,12 @@ I also checked the server uptime:
 
 ```bash
 uptime
+```
+
+Or you could verify with combined commands:
+
+```bash
+hostname && uname -a && lscpu && free -h && df -h && ip addr
 ```
 
 These commands provided a basic overview of the server environment.
@@ -252,7 +256,7 @@ After creating the `devops` account, I used it to verify SSH access to the serve
 From the client machine, I connected using:
 
 ```bash
-ssh devops@SERVER_IP
+ssh devops@10.x.x.x
 ```
 
 Once connected, I verified the account:
@@ -275,7 +279,7 @@ The successful connection confirmed that remote SSH access was working correctly
 
 # 6. Firewall Configuration
 
-## 6.1 Install UFW
+## 6.1 Install UFW(Uncomplicated Firewall)
 
 I installed UFW if it was not already available:
 
@@ -287,6 +291,18 @@ I then checked its current status:
 
 ```bash
 sudo ufw status
+```
+
+Enable UFW:
+
+```bash
+sudo ufw enable
+```
+
+Verify the firewall rules:
+
+```bash
+sudo ufw status verbose
 ```
 
 ---
@@ -303,6 +319,12 @@ I also allowed HTTP traffic for the Nginx web server:
 
 ```bash
 sudo ufw allow 80/tcp
+```
+
+Check:
+
+```bash
+sudo ufw status numbered
 ```
 
 ---
