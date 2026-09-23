@@ -68,11 +68,11 @@ linux-server-administration/
 ├── screenshots/
 │   ├── 01-server-info.png
 │   ├── 02-ssh.png
-│   ├── 04-firewall.png
-│   ├── 05-nginx.png
-│   ├── 08-nginx-web.png
-│   ├── 09-server-health.png
-│   └── 10-backup.png
+│   ├── 03-firewall.png
+│   ├── 04-nginx.png
+│   ├── 05-nginx-web.png
+│   ├── 06-server-health.png
+│   └── 07-backup.png
 │
 └── .gitignore
 ```
