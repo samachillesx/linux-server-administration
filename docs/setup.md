@@ -271,6 +271,8 @@ and checked the hostname:
 hostname
 ```
 
+![SSH](../screenshots/ssh.png)
+
 The successful connection confirmed that remote SSH access was working correctly.
 
 > **Note:** SSH access was tested using `devops`, but the subsequent server administration and configuration work was performed under `samachilles`.
@@ -291,18 +293,6 @@ I then checked its current status:
 
 ```bash
 sudo ufw status
-```
-
-Enable UFW:
-
-```bash
-sudo ufw enable
-```
-
-Verify the firewall rules:
-
-```bash
-sudo ufw status verbose
 ```
 
 ---
@@ -343,6 +333,8 @@ The configuration was then verified:
 sudo ufw status verbose
 ```
 
+![Firewall](../screenshots/firewall.png)
+
 This confirmed that the required ports were allowed while the firewall was active.
 
 ---
@@ -379,6 +371,10 @@ If required, it can be started manually with:
 sudo systemctl start nginx
 ```
 
+I installed and configured Nginx as the web server. I enabled the service to start automatically at system boot and validated its configuration to ensure everything was correct before deployment.
+
+![Nginx](../screenshots/nginx.png)
+
 ---
 
 ## 7.3 Verify Nginx
@@ -397,6 +393,8 @@ curl http://localhost
 
 A successful response confirmed that Nginx was serving HTTP requests.
 
+![Nginx-Web](../screenshots/nginx-web.png)
+
 ---
 
 # 8. Configure the Web Content
@@ -406,23 +404,23 @@ A successful response confirmed that Nginx was serving HTTP requests.
 I created a directory for the project website:
 
 ```bash
-sudo mkdir -p /var/www/devops-demo
+sudo mkdir -p /var/www/web-content
 ```
 
 I then assigned ownership:
 
 ```bash
-sudo chown -R $USER:$USER /var/www/devops-demo
+sudo chown -R $USER:$USER /var/www/web-content
 ```
 
 ---
 
 ## 8.2 Create the Web Page
 
-I created the HTML page:
+I created a custom HTML page:
 
 ```bash
-nano /var/www/devops-demo/index.html
+vim /var/www/web-content/index.html
 ```
 
 The page contained simple content to demonstrate that the Nginx web server was working.
@@ -436,22 +434,23 @@ Example:
     <title>Linux Server Administration</title>
 </head>
 <body>
-    <h1>Linux Server Administration Project</h1>
-    <p>Nginx is running successfully.</p>
+    <h1>Linux Server is Running</h1>
+    <p>Server administered by Sam Achilles.</p>
+    <p>Ubuntu + Nginx</p>
 </body>
 </html>
 ```
 
-I saved the file after adding the project content.
+Save the file and exit.
 
 ---
 
-# 9. Configure Nginx
+# 9. Configure Nginx (Server Block)
 
 I created a custom Nginx server block:
 
 ```bash
-sudo nano /etc/nginx/sites-available/devops-demo
+sudo vim /etc/nginx/sites-available/server-block
 ```
 
 The configuration points Nginx to the project website directory:
@@ -461,7 +460,7 @@ server {
     listen 80;
     server_name _;
 
-    root /var/www/devops-demo;
+    root /var/www/web-content;
     index index.html;
 
     location / {
@@ -470,26 +469,37 @@ server {
 }
 ```
 
-I enabled the configuration by creating a symbolic link:
+Enabled the configuration by creating a symbolic link:
 
 ```bash
-sudo ln -s /etc/nginx/sites-available/devops-demo \
-/etc/nginx/sites-enabled/devops-demo
+sudo ln -s /etc/nginx/sites-available/server-block /etc/nginx/sites-enabled/server-block
 ```
 
-I tested the configuration:
+Remove the default Nginx page:
+
+```bash
+sudo rm /etc/nginx/sites-enabled/default
+```
+
+Tested the configuration:
 
 ```bash
 sudo nginx -t
 ```
 
-After the configuration test completed successfully, I reloaded Nginx:
+After the configuration test completed successfully, reload Nginx:
 
 ```bash
 sudo systemctl reload nginx
 ```
 
-> **Note:** The custom server block was necessary to serve the project webpage from `/var/www/devops-demo`.
+Or start Nginx again:
+
+```bash
+sudo systemctl start nginx
+```
+
+> **Note:** The custom server block was necessary to serve the project webpage from `/var/www/web-content`.
 
 ---
 
@@ -504,7 +514,7 @@ curl http://localhost
 If the VM's IP address was reachable from the client machine, the webpage could also be accessed through:
 
 ```text
-http://SERVER_IP
+http://10.x.x.x
 ```
 
 The configured webpage confirmed that Nginx was correctly serving the project content.
@@ -523,7 +533,7 @@ This verification confirmed that:
 I created a Bash script to collect basic information about the server:
 
 ```bash
-nano scripts/server_health.sh
+vim scripts/server_health.sh
 ```
 
 The script collects information such as:
@@ -536,7 +546,7 @@ The script collects information such as:
 * Network information
 * Service status
 
-I made the script executable:
+Made it executable:
 
 ```bash
 chmod +x scripts/server_health.sh
@@ -550,21 +560,19 @@ Then ran it:
 
 The output was captured as project evidence in:
 
-```text
-screenshots/health-check.png
-```
+![Server Health](../screenshots/server-health.png)
 
 ---
 
-# 12. Create the Backup Script
+# 12. Create the Backup Script (Nginx Config Files)
 
 I created a Bash backup script:
 
 ```bash
-nano scripts/backup.sh
+vim scripts/backup.sh
 ```
 
-The script was designed to create a compressed, timestamped backup of the selected files or directories.
+The script creates a compressed backup of Nginx Configuration files.
 
 I made it executable:
 
@@ -578,13 +586,15 @@ Then ran the script:
 ./scripts/backup.sh
 ```
 
-I verified the generated backup using:
+Verify the generated backup using:
 
 ```bash
 ls -lh
 ```
 
 A timestamped backup archive was created in the configured backup location.
+
+![Backup](../screenshots/backup.png)
 
 This provided practical experience with basic backup automation using Bash.
 
